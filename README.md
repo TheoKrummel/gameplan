@@ -7,10 +7,10 @@ Steampunk/Fantasy
 
 4 classes
 
-Uncertain Gunslinger:
-Broken Warden:
-Disgraced Arcanist:
-Ruined Alchemist:
+Uncertain Gunslinger:;
+Broken Warden:;
+Disgraced Arcanist:;
+Ruined Alchemist:;
 
 1 Friendly encounter
 The old man. (Friendly, endearing, doesn't die, gives players items.)
