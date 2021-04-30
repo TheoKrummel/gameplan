@@ -1,6 +1,6 @@
 # gameplan
 
-# Setting:
+### Setting:
 Steampunk/Fantasy  
 "Your story begins in the once illustrious capitol city "Christallis". Named for the rare crystal "Zhonflorite" only found here in all of "NohM'Ana". The city built upon great wealth, and quickly attracted many travelers looking for quick and easy money, growing in size, population, and power." (Continue writing story later, city runs out of rare crystal and falls into a depression. Mafia siezes power and takes over government, controls nearly everything. Hero's have different backstory's all want to defeat final boss for different personal reasons.)
 
