@@ -31,27 +31,27 @@ Warden Abilities: Passive(For every enemy targeting you increase armor by 10) Cr
 
 ### Enemy encounters:
 
-Goblin gang
-Dreg crew
-Marauder
-Mafia Bruiser
-Mafia Soldier
-Mafia UnderBoss
-Mafia Wiseguy
+* Goblin gang
+* Dreg crew
+* Marauder
+* Mafia Bruiser
+* Mafia Soldier
+* Mafia UnderBoss
+* Mafia Wiseguy
 
 
 
 ### Special Encounters:
 
-Trapped Chest encounter
-Mugger encounter
-Beggar encounter
-Stranger in Danger encounter
-Animal Familiar? encounter
-Secret Item encounter (figure out how to make secret)
+* Trapped Chest encounter
+* Mugger encounter
+* Beggar encounter
+* Stranger in Danger encounter
+* Animal Familiar? encounter
+* Secret Item encounter (figure out how to make secret)
 
 ### Boss Encounters
-Billy "Soft-hands"(Evil), Billy "Hard-hands"(Very Evil)
-The Cook
-Zeke(Mafia Boss)(If Zhonya is found and brought along, add special scene between the two)
+* Billy "Soft-hands"(Evil), Billy "Hard-hands"(Very Evil)
+* The Cook
+* Zeke(Mafia Boss)(If Zhonya is found and brought along, add special scene between the two)
 
