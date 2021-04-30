@@ -13,10 +13,15 @@ Steampunk/Fantasy
   * Trickshot(75% chance to hit, deals 25 dmg + modifiers 3 times, splitting evenly across enemies rounding down, requires and consumes 3 ammunition tokens) 
   * Fan the Hammer(65% for each shot to hit increasing in proximity to enemy, deals 20 dmg + modifiers 6 maximum times to one target, consumes 6 maximum ammun ition tokens, Fan     the Hammer can be used with less than 6 ammunition tokens, but will consume the remainder of ammo and deal less damage.) 
   * Bullet Storm (Ultimate ability)(Expends all Ultimate charge AND requires and consumes 12 ammunition tokens. Bullet Storm hits every enemy and deals 135 damage + modifiers 3     times but is reduced by armor 2 times, grants a free Flourish) 
-  * Flourish(Reloads to 12 ammunition tokens 85% chance to apply stun on enemy hit by Gunslinger - 5% per bullet reloaded) 
+  * Flourish(Reloads to 12 ammunition tokens 85% chance to apply **STUN** on enemy hit by Gunslinger - 5% per bullet reloaded) 
 
 ##### Broken Warden: BH: 132 BA: 3 (specializes all melee weapons, uses small firearms, heavy armor)  
-w      : Passive(For every enemy targeting you increase armor by 10) Crippling Blow(Stuns enemy for 1 turn reduced by 2.5% per armor) 
+* Warden Abilities:
+  * Passive(For every enemy targeting you increase armor by 10) 
+  * Crippling Blow(**STUNS** enemy for 2 turns reduced chance to hit by 2.5% per armor, cannot be used on same target for 4 turn cooldown) 
+  * Brace(Increases armor by 50% for 2 turns, reduces dodge chance to 0% for two turns)
+  * Police Brutality(75% chance to hit, deals 20% health damage + 50% armor damage, if used on a **STUNNED** enemy hit chance is increased to 100% and damage is doubled)
+  * 
 
 ##### Disgraced Arcanist: BH: 98 BA: 1  
 
