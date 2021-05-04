@@ -17,15 +17,27 @@ Steampunk/Fantasy
 
 ##### Broken Warden: BH: 132 BA: 3 (specializes all melee weapons, uses small firearms, heavy armor)  
 * Warden Abilities:
-  * Passive(For every enemy targeting you increase armor by 10) 
+  * Passive(For every enemy targeting you increase armor by 10, Warden gains 15% ult charge per ability used and 1% per 1% health lost) 
   * Crippling Blow(**STUNS** enemy for 2 turns reduced chance to hit by 2.5% per armor, cannot be used on same target for 4 turn cooldown) 
-  * Brace(Increases armor by 50% for 2 turns, reduces dodge chance to 0% for two turns)
-  * Police Brutality(75% chance to hit, deals 20% health damage + 50% armor damage, if used on a **STUNNED** enemy hit chance is increased to 100% and damage is doubled)
-  * 
+  * Brace(Increases armor by 50% for 3 turns, reduces dodge chance to 0% for 3 turns)
+  * Police Brutality(75% chance to hit, deals 20% health damage + 50% armor damage, if used on a **STUNNED** hit chance is increased to 100% and damage is doubled)
+  * Savage Mockery(Hits all targets, reduces enemy armor by 25%, lasts 2 turns)
+  * Questionable Justice(Ultimate ability)(Hits all targets, consumes all Ult charge, **STUNS** all enemies for 2 turns and deals 25 + 200% armor damage)
 
 ##### Disgraced Arcanist: BH: 98 BA: 1  
-
+* Arcanist Abilities:
+  * Passive(Arcanist has a mana pool of 200, his abilities reduce his mana pool. Mana pool regenerates at a rate of 40 per turn)
+  * Ostracised Vengeance(Ultimate ability)
 ##### Ruined Alchemist: BH: 114 BA: 5
+
+
+
+
+
+
+
+
+
 
 
 
