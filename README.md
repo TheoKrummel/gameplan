@@ -26,10 +26,20 @@ Steampunk/Fantasy
 
 ##### Disgraced Arcanist: BH: 98 BA: 1  
 * Arcanist Abilities:
-  * Passive(Arcanist has a mana pool of 200, his abilities reduce his mana pool. Mana pool regenerates at a rate of 40 per turn)
+  * Passive(Arcanist has a mana pool of ??, his abilities reduce his mana pool. Mana pool regenerates at a rate of ?? per turn)
+  * Depraved Magics(some sort of damage)
+  * Corrupt Binding(some sort of stun)
+  * Neurotic Behavior(Some sort of Buff)
+  * The Arcanomicon(Buff to spells)
   * Ostracised Vengeance(Ultimate ability)
 ##### Ruined Alchemist: BH: 114 BA: 5
-
+* Alchemist Abilities:
+  * Passive (Buffs himself and debuffs enemies)
+  * Basic Attack()
+  * Debuff enemy damage()
+  * Buff Basic Attack using Debuff stacks()]
+  * Buff Base Armor using Debuff Stacks()
+  * Ultimate Ability Debuffs all enemies
 
 
 
