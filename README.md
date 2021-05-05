@@ -53,6 +53,9 @@ Steampunk/Fantasy
 
 ### 1 Friendly encounter
 ##### The old man. (Friendly, endearing, doesn't die, gives players items.)
+Tutorial fight
+Old man Base Stats:
+* BH 999,999,999,999,999
 
 
 
