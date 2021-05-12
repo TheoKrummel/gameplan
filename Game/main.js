@@ -5,6 +5,10 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 
 let GS = {
   channel: 0,
+  MOM:`Hi mom! Happy Mother\'s Day :)\nThis game will prompt you with lots of options in **CLASSES**, **CHOICES**, and **ABILITIES**. (currently in that order)\n
+  When you are picking your **CLASS**, you will need to type in the command "-class" and then the class you would like to choose. For example: -class gunslinger or -class warden.\n
+  Conversations and abilities are slightly different than class choices. When you are picking a **CHOICE** in a conversation, you will use numbers instead of words. Use "-choice", and then the dialogue option you want. For example: -choice 1, or -choice 2\n
+  When you start an encounter, the game will ask you to pick an **ABILITY**. **ABILITIES** work very similarly to conversation choices. The only difference being they are called using "-ability. However there is one ability known as "Heal" that is called using "-ability heal".`,
   openingSetting: `"Your story begins in the once illustrious capitol city **Christallis**. 
 Named for the rare crystal "Zhonflorite" only found here in all of "NohM\'Ana". 
 The city built upon great wealth, and quickly attracted many travelers looking for quick and easy money, growing in size, population, and power." \n`,
@@ -22,6 +26,11 @@ The city built upon great wealth, and quickly attracted many travelers looking f
           name:'Trickshot',
           damage: 75,
           CTH: 75
+        },
+        abilityHeal:{
+          name:'Drink Gin',
+          heal: 75,
+          uses: 3
         }
       }},
     'WARDEN': {
@@ -37,6 +46,11 @@ The city built upon great wealth, and quickly attracted many travelers looking f
           name:'Police Brutality',
           damage: 70,
           CTH: 75
+        },
+        abilityHeal:{
+          name:'Drink Gin',
+          heal: 75,
+          uses: 3
         }
       }
     }
@@ -79,11 +93,19 @@ The city built upon great wealth, and quickly attracted many travelers looking f
     class: 'N/A',
     HP: 0,
     lives: 3,
+    inventory: {
+      heal: {
+        name: 'Drink Gin',
+        heal: 75,
+        uses: 3
+      },
+    },
   },
   ES: {
     actions: []
   }
 }
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -109,11 +131,11 @@ const openingConversation = (answerChoice) => {
 const openingConversation1 = (answerChoice) => {
   const conversationChoice1 = answerChoice
     if(conversationChoice1 === '1'){
-      GS.channel.send('\n(He chuckles)\n"You always know how to make people smile. Good luck out there."')
-      GS.channel.send('You give the old man a nod, take a deep breath and walk out of the bar.')
+      GS.channel.send('\n(He chuckles)\n"You always know how to make people grin. Good luck out there."')
+      GS.channel.send('(He hands you a full bottle of gin)\n"For the journey." He says, and smiles.\nYou give the old man a nod, take a deep breath and walk out of the bar.')
       }else if(conversationChoice1 === '2'){
       GS.channel.send('\n(Your enthusiasm brings a small smile to his face)\n"With that attitude I know we can change things around here. Good luck out there."')
-      GS.channel.send('You give the old man a nod, take a deep breath and walk out of the bar.')
+      GS.channel.send('(He hands you a full bottle of gin)\n"For the journey." He says, and smiles.\nYou give the old man a nod, take a deep breath and walk out of the bar.')
       }else{
       console.log('shut up inside q11')
       }
@@ -124,20 +146,21 @@ const openingConversation1 = (answerChoice) => {
     const conversationChoice2 = answerChoice
     if(conversationChoice2 === '1'){
       GS.channel.send(`\n"Me? I'll be here. The Mafia won't touch me. Even if they tried, Charlie would rip them a new one."\n(He jerks his thumb towards a tommygun mounted on the wall behind his head)\n"I wish you the best of luck. You\'ll need it.`)
-      GS.channel.send('You give the old man a nod, take a deep breath and walk out of the bar.')
+      GS.channel.send('(He hands you a full bottle of gin)\n"For the journey." He says, and smiles.\nYou give the old man a nod, take a deep breath and walk out of the bar.')
     }else if(conversationChoice2 === '2'){
       GS.channel.send(`\n"That\'s for you to find out and for me to watch. Hope you\'re ready for what\'s out there."`)
-      GS.channel.send('You give the old man a nod, take a deep breath and walk out of the bar.')
+      GS.channel.send('(He hands you a full bottle of gin)\n"For the journey." He says, and smiles.\nYou give the old man a nod, take a deep breath and walk out of the bar.')
     }else{console.log('shut up inside q12')}
     fightEncounter()
   }
 
 const classPick = (classChoice, rebirth) => {
   GS.PS.HP = GS.classes[classChoice].BH
+  GS.PS.class = GS.classes[classChoice].name.toUpperCase()
+  GS.PS.inventory.heal.uses = 3
   if(rebirth === false){ 
-    GS.PS.class = GS.classes[classChoice].name.toUpperCase()
     GS.channel.send(`You chose ${GS.PS.class}.`)
-    GS.channel.send(`\n(You're in an almost empty bar, save for the bartender, an old man wearing the outfit of a theater usher.)\n "How do you feel?" He asks. \n 1: Pretty shit.\n2: Great!\n`)
+    GS.channel.send(`\n**CHOICE**\n(You're in an almost empty bar, save for the bartender, an old man wearing the outfit of a theater usher.)\n "How do you feel?" He asks. \n 1: Pretty shit.\n2: Great!\n`)
   }
 }
 
@@ -146,22 +169,27 @@ client.on("message", (msg) => {
   GS.PS.name = msg.author;
   let splitMessage = msg.content.split(" ");
 
-  let gayMessage = splitMessage.indexOf('gay');
+let gayMessage = splitMessage.indexOf('gay');
   if (gayMessage > -1){
     GS.channel.send('Your mom is gay, friggin idiot');
   }
 
   let startMessage = splitMessage.indexOf('START');
   if(startMessage > -1){
-    GS.channel.send('Game is starting. Get Ready!')
+    GS.channel.send('Game is starting. Get Ready!\n If you need help, use -MOM to get help.')
     // GS.channel.send(GS.openingSetting)
-    GS.channel.send('What class will you choose?' + `\n\n Gunslinger \n Warden \n`)
+    GS.channel.send('**CLASS**\nWhat class will you choose?' + `\n\n Gunslinger \n Warden \n`)
   }
   let classMessage = splitMessage.indexOf('-class');
   if(classMessage === 0){
     classPick(splitMessage[1].toUpperCase(), false)
   }
-  
+
+  let MOMMessage = splitMessage.indexOf('-MOM');
+  if(MOMMessage === 0){
+    GS.channel.send(GS.MOM)
+  }
+
   let madeChoice = splitMessage.indexOf('-choice');
   if(madeChoice === 0){
     let convo = GS.PS.qIndex;
@@ -212,6 +240,7 @@ client.on("message", (msg) => {
     GS.classes[GS.PS.class].abilities
     const abilityOne = GS.classes[GS.PS.class].abilities.abilityOne
     const abilityTwo = GS.classes[GS.PS.class].abilities.abilityTwo
+    const abilityHeal = GS.PS.inventory.heal
     if(ability === '1'){
       GS.ES.actions.push(abilityOne.name)
       GS.ES.encounter.BH = GS.ES.encounter.BH - abilityOne.damage
@@ -220,12 +249,32 @@ client.on("message", (msg) => {
     }else if(ability === '2'){
       GS.ES.actions.push(abilityTwo.name)
       const chance = Math.random()
-      if(chance > .99){
+      if(chance > .25){
         GS.ES.encounter.BH = GS.ES.encounter.BH - abilityTwo.damage
         const lastAbility = GS.ES.actions[GS.ES.actions.length -1]
         GS.channel.send(`You used ${lastAbility}. ${GS.ES.encounter.name}'s health has been reduced to ${GS.ES.encounter.BH}`)
-      }else if(chance < .99){
+      }else if(chance < .25){
         GS.channel.send('The attack missed!')
+      }
+    }else if (ability === 'heal'){
+      if(GS.PS.inventory.heal.uses > 0){
+      GS.ES.actions.push(abilityHeal.name)
+      let oldHP = GS.PS.HP
+      let newHP = GS.PS.HP = GS.PS.HP + GS.PS.inventory.heal.heal
+      GS.PS.inventory.heal.uses = GS.PS.inventory.heal.uses - 1
+        if(GS.PS.HP > GS.classes[GS.PS.class].BH){
+          oldHP = GS.PS.HP
+          newHP = GS.PS.HP = GS.classes[GS.PS.class].BH
+        }
+        let amountHealed = newHP - oldHP
+        if(amountHealed < 1){
+          amountHealed = amountHealed + 75
+        }
+      const lastAbility = GS.ES.actions[GS.ES.actions.length -1]
+      GS.channel.send(`You used ${lastAbility}. You healed for ${amountHealed}. Your health is now ${GS.PS.HP}.\n You have ${GS.PS.inventory.heal.uses} swigs of Gin left.`)
+      console.log(GS.PS.inventory.heal.uses)
+      }else if(GS.PS.inventory.heal.uses < 1){
+        GS.channel.send(`You're out of Gin!`)
       }
     }
     if(GS.ES.encounter.BH < 1){
@@ -241,7 +290,7 @@ client.on("message", (msg) => {
         
       }
       if(GS.PS.HP > 1){
-      GS.channel.send(`${GS.ES.encounter.name} clobbered your fuckin face in bud, dealing ${GS.ES.encounter.Attacks[theBigAttack] - playerArmor} damage!\n Your new HP is ${GS.PS.HP}\n What will you do? \n1: ${abilityOne.name}\n2: ${abilityTwo.name}`)
+      GS.channel.send(`${GS.ES.encounter.name} clobbered your fuckin face in bud, dealing ${GS.ES.encounter.Attacks[theBigAttack] - playerArmor} damage!\n Your new HP is ${GS.PS.HP}\n What will you do? \n1: ${abilityOne.name}\n2: ${abilityTwo.name}\nHeal: ${abilityHeal.name}`)
     }
     }
   }
@@ -254,12 +303,13 @@ const createRandEnc = function (obj) {
 
 const fightEncounter = () => {
   const encounter = createRandEnc()
-  GS.channel.send(`\n(Surveying your environment, you realize you\'re surrounded by a ${encounter.name})\n Prepare yourself.`)
+  GS.channel.send(`\n**ABILITY**\n(Surveying your environment, you realize you\'re surrounded by a ${encounter.name})\n Prepare yourself.`)
   GS.ES['encounter'] = encounter
 
   const pClass = GS.PS.class;
   const abilityOne = GS.classes[pClass].abilities.abilityOne.name
   const abilityTwo = GS.classes[pClass].abilities.abilityTwo.name
+  const abilityHeal = GS.PS.inventory.heal.name
 
-  GS.channel.send(`\nWhat will you do? \n1: ${abilityOne}\n2: ${abilityTwo}`)
+  GS.channel.send(`\nWhat will you do? \n1: ${abilityOne}\n2: ${abilityTwo}\nHeal: ${abilityHeal}`)
 }
